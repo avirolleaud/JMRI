@@ -43,7 +43,11 @@ public class XNetThrottle extends AbstractThrottle implements XNetListener {
     // Consecutive retransmittable (busy/communication) error replies seen for
     // the current outstanding request; guards against a stuck state machine
     // when the command station keeps answering busy (see countRetransmittableError).
-    private int retransmittableErrorCount = 0;
+    // Written from message(XNetReply) on the GUI thread and cleared from
+    // sendQueuedMessage() on whichever thread issues a command, so all accesses
+    // are made under the monitor of this throttle.
+    @GuardedBy("this")
+    private volatile int retransmittableErrorCount = 0;
     private static final int MAX_RETRANSMITTABLE_ERRORS = 5;
 
     protected int address;
@@ -1114,7 +1118,7 @@ public class XNetThrottle extends AbstractThrottle implements XNetListener {
      * MAX_RETRANSMITTABLE_ERRORS consecutive errors, reset the state machine
      * and restart the queue so the throttle does not stay stuck forever.
      */
-    private void countRetransmittableError() {
+    private synchronized void countRetransmittableError() {
         if (++retransmittableErrorCount >= MAX_RETRANSMITTABLE_ERRORS) {
             log.warn("Throttle {}: {} consecutive busy/communication errors, resetting request state",
                     getDccAddress(), retransmittableErrorCount);
