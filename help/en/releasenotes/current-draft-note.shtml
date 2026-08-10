@@ -701,6 +701,10 @@
                 is enabled: painting a state icon no longer resizes the row, which kept the
                 table repainting itself continuously once all turnouts were in a known state.
                 Rows are now also tall enough for the icons while turnouts are still in the
+            <li>Fixed high CPU use of the Sensor Table when the "graphic state" preference
+                is enabled: painting a state icon no longer resizes the row, which kept the
+                table repainting itself continuously once all sensors were in a known state.
+                Rows are now also tall enough for the icons while sensors are still in the
                 Unknown state.</li>
             <li></li>
         </ul>
