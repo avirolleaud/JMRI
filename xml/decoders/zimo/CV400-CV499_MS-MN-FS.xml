@@ -12,6 +12,8 @@
 <!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  -->
 <!-- for more details.                                                      -->
 <!-- version 1 - merging various MX and MS series files for new MS-series CVs 400-499  -->
+<!-- version 1.1  31 July 2026  Pierre Billon - renamed from CV400-CV499_MS_series.xml; the name now states the CV range held and the decoder series it applies to -->
+<!-- version 1.2  06 August 2026  Pierre Billon - Added French and German translations -->
 <variables xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/decoder-4-15-2.xsd">
       
   <variable item="Input mapping for internal F0" CV="400">
@@ -239,6 +241,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -246,21 +249,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -268,6 +275,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -295,6 +303,7 @@
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV431 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV431)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV431)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV431)</tooltip>
   </variable>
@@ -311,6 +320,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 1 A2 Fw" CV="433" mask="XXXVVVVV">
     <enumVal>
@@ -324,6 +336,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 1 A1 Rw" CV="434" mask="XXXVVVVV">
     <enumVal>
@@ -337,6 +352,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 1 A2 Rw" CV="435" mask="XXXVVVVV">
     <enumVal>
@@ -350,6 +368,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 2 F-key" CV="436">
     <enumVal>
@@ -373,6 +394,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
 
@@ -382,21 +404,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -404,6 +430,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -411,16 +438,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV437 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV437)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV437)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV437)</tooltip>
   </variable>
@@ -437,6 +469,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 2 A2 Fw" CV="439" mask="XXXVVVVV">
     <enumVal>
@@ -450,6 +485,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 2 A1 Rw" CV="440" mask="XXXVVVVV">
     <enumVal>
@@ -463,6 +501,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 2 A2 Rw" CV="441" mask="XXXVVVVV">
     <enumVal>
@@ -476,6 +517,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 3 F-key" CV="442">
     <enumVal>
@@ -500,6 +544,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -508,21 +553,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -530,6 +579,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -537,16 +587,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV443 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV443)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV443)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV443)</tooltip>
   </variable>
@@ -562,6 +617,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 3 A2 Fw" CV="445" mask="XXXVVVVV">
     <enumVal>
@@ -575,6 +633,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 3 A1 Rw" CV="446" mask="XXXVVVVV">
     <enumVal>
@@ -588,6 +649,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 3 A2 Rw" CV="447" mask="XXXVVVVV">
     <enumVal>
@@ -601,6 +665,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
 
 
@@ -625,6 +692,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -633,21 +701,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -655,6 +727,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -662,14 +735,19 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV449 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV449)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV449)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV449)</tooltip>
   </variable>
@@ -685,6 +763,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 4 A2 Fw" CV="451" mask="XXXVVVVV">
     <enumVal>
@@ -698,6 +779,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 4 A1 Rw" CV="452" mask="XXXVVVVV">
     <enumVal>
@@ -711,6 +795,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 4 A2 Rw" CV="453" mask="XXXVVVVV">
     <enumVal>
@@ -724,6 +811,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 5 F-key" CV="454">
     <enumVal>
@@ -746,6 +836,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -754,21 +845,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -776,6 +871,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -783,16 +879,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV455 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV455)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV455)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV455)</tooltip>
   </variable>
@@ -808,6 +909,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 5 A2 Fw" CV="457" mask="XXXVVVVV">
     <enumVal>
@@ -821,6 +925,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 5 A1 Rw" CV="458" mask="XXXVVVVV">
     <enumVal>
@@ -834,6 +941,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 5 A2 Rw" CV="459" mask="XXXVVVVV">
     <enumVal>
@@ -847,6 +957,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 6 F-key" CV="460">
     <enumVal>
@@ -869,6 +982,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -877,21 +991,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -899,6 +1017,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -906,16 +1025,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV461 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV461)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV461)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV461)</tooltip>
   </variable>
@@ -931,6 +1055,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 6 A2 Fw" CV="463" mask="XXXVVVVV">
     <enumVal>
@@ -944,6 +1071,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 6 A1 Rw" CV="464" mask="XXXVVVVV">
     <enumVal>
@@ -957,6 +1087,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 6 A2 Rw" CV="465" mask="XXXVVVVV">
     <enumVal>
@@ -970,6 +1103,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 7 F-key" CV="466">
     <enumVal>
@@ -994,6 +1130,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -1003,21 +1140,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -1025,6 +1166,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -1033,16 +1175,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV467 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV467)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV467)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV467)</tooltip>
   </variable>
@@ -1058,6 +1205,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 7 A2 Fw" CV="469" mask="XXXVVVVV">
     <enumVal>
@@ -1071,6 +1221,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 7 A1 Rw" CV="470" mask="XXXVVVVV">
     <enumVal>
@@ -1084,6 +1237,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 7 A2 Rw" CV="471" mask="XXXVVVVV">
     <enumVal>
@@ -1097,6 +1253,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 8 F-key" CV="472">
     <enumVal>
@@ -1122,6 +1281,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -1131,21 +1291,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -1153,6 +1317,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -1161,16 +1326,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV473 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV473)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV473)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV473)</tooltip>
   </variable>
@@ -1186,6 +1356,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 8 A2 Fw" CV="475" mask="XXXVVVVV">
     <enumVal>
@@ -1199,6 +1372,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 8 A1 Rw" CV="476" mask="XXXVVVVV">
     <enumVal>
@@ -1212,6 +1388,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 8 A2 Rw" CV="477" mask="XXXVVVVV">
     <enumVal>
@@ -1225,6 +1404,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 9 F-key" CV="478">
     <enumVal>
@@ -1250,6 +1432,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -1259,21 +1442,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -1281,6 +1468,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -1289,16 +1477,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV479 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV479)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV479)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV479)</tooltip>
   </variable>
@@ -1314,6 +1507,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 9 A2 Fw" CV="481" mask="XXXVVVVV">
     <enumVal>
@@ -1327,6 +1523,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 9 A1 Rw" CV="482" mask="XXXVVVVV">
     <enumVal>
@@ -1340,6 +1539,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 9 A2 Rw" CV="483" mask="XXXVVVVV">
     <enumVal>
@@ -1353,6 +1555,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 10 F-key" CV="484">
     <enumVal>
@@ -1378,6 +1583,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -1387,21 +1593,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -1409,6 +1619,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -1417,16 +1628,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV485 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV485)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV485)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV485)</tooltip>
   </variable>
@@ -1442,6 +1658,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 10 A2 Fw" CV="487" mask="XXXVVVVV">
     <enumVal>
@@ -1455,6 +1674,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 10 A1 Rw" CV="488" mask="XXXVVVVV">
     <enumVal>
@@ -1468,6 +1690,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 10 A2 Rw" CV="489" mask="XXXVVVVV">
     <enumVal>
@@ -1481,6 +1706,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
 
   <variable item="Swiss Mapping Group 11 F-key" CV="490">
@@ -1506,6 +1734,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -1514,21 +1743,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -1536,6 +1769,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -1544,16 +1778,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV491 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV491)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV491)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV491)</tooltip>
   </variable>
@@ -1569,6 +1808,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 11 A2 Fw" CV="493" mask="XXXVVVVV">
     <enumVal>
@@ -1582,6 +1824,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 11 A1 Rw" CV="494" mask="XXXVVVVV">
     <enumVal>
@@ -1595,6 +1840,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 11 A2 Rw" CV="495" mask="XXXVVVVV">
     <enumVal>
@@ -1608,6 +1856,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
 
   <variable item="Swiss Mapping Group 12 F-key" CV="496">
@@ -1633,6 +1884,7 @@
     <label>M+F</label>
     <label xml:lang="cs">M+F</label>
     <tooltip>the outputs listed under A1 and A2 should only switch ON if the F and M key are both ON.</tooltip>
+    <tooltip xml:lang="fr">Les sorties listées sous A1 et A2 ne doivent s'activer que si les touches F et M sont toutes deux actives.</tooltip>
     <tooltip xml:lang="de">Die unter A1 und A2 aufgeführten Ausgänge sollten nur dann EIN stehen, wenn sowohl die F- als auch die M-Taste EIN sind.</tooltip>
     <tooltip xml:lang="cs">Výstupy uvedené pod A1 a A2 by se měly zapnout pouze tehdy, pokud jsou obě tlačítka F a M zapnuta.</tooltip>
   </variable>
@@ -1641,21 +1893,25 @@
       <enumVal>
         <enumChoice choice="None" value="0">
           <choice>Off</choice>
+          <choice xml:lang="fr">Off</choice>
           <choice xml:lang="de">Aus</choice>
           <choice xml:lang="cs">Vypnuto</choice>
         </enumChoice>
         <enumChoice choice="Fw" value="2">
           <choice>Fwd on</choice>
+          <choice xml:lang="fr">Av. on</choice>
           <choice xml:lang="de">Vor an</choice>
           <choice xml:lang="cs">Vpřed zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Rev" value="1">
           <choice>Rev on</choice>
+          <choice xml:lang="fr">Arr. on</choice>
           <choice xml:lang="de">Rück an</choice>
           <choice xml:lang="cs">Vzad zapnuto</choice>
         </enumChoice>
         <enumChoice choice="Both" value="3">
           <choice>All on</choice>
+          <choice xml:lang="fr">Tout on</choice>
           <choice xml:lang="de">Beide an</choice>
           <choice xml:lang="cs">Vše zapnuto</choice>
         </enumChoice>
@@ -1663,6 +1919,7 @@
     <label>ON while</label>
     <label xml:lang="cs">Když Zapnuto</label>
     <tooltip>M-key outputs shall not be turned OFF if the F-key is ON and driving direction</tooltip>
+    <tooltip xml:lang="fr">Les sorties de la touche M ne doivent pas être désactivées si la touche F est active et le sens de marche défini.</tooltip>
     <tooltip xml:lang="de">M-Tasten-Ausgänge dürfen nicht ausgeschaltet werden, wenn die F-Taste eingeschaltet ist und Fahrtrichtung festgelegt wurde.</tooltip>
     <tooltip xml:lang="cs">Výstupy M-tlačítka nesmí být vypnuty, pokud je F-tlačítko zapnuto a ve směru jízdy.</tooltip>
   </variable>
@@ -1671,16 +1928,21 @@
       <enumVal> <!-- copy in for special value-->
         <enumChoice choice="No">
           <choice>No</choice>
+          <choice xml:lang="fr">Non</choice>
+          <choice xml:lang="de">Nein</choice>
           <choice xml:lang="cs">Ne</choice>
         </enumChoice>
         <enumChoice choice="Yes" value="255" >    <!--  -->
           <choice>Yes</choice>
+          <choice xml:lang="fr">Oui</choice>
+          <choice xml:lang="de">Ja</choice>
           <choice xml:lang="cs">Ano</choice>
         </enumChoice>
     </enumVal>
     <label>Hibeam</label>
     <label xml:lang="cs">Dálkové světlo</label>
     <tooltip>M-key Hibeam (hides other options in CV497 )</tooltip>
+    <tooltip xml:lang="fr">Plein phares touche M (masque les autres options du CV497)</tooltip>
     <tooltip xml:lang="de">M-Taste Fernlicht (deaktiviert andere Optionen in CV497)</tooltip>
     <tooltip xml:lang="cs">M-tlačítko Dálkové světlo (skryje ostatní volby v CV497)</tooltip>
   </variable>
@@ -1696,6 +1958,9 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
   <variable item="Swiss Mapping Group 12 A2 Fw" CV="499" mask="XXXVVVVV">
     <enumVal>
@@ -1709,5 +1974,8 @@
     <enumVal>
       <xi:include href="http://jmri.org/xml/decoders/zimo/Choice-DG.xml"/>
     </enumVal>
+    <tooltip>"Off" means the function output is off - dimmed to 0% - without using a dimming group.</tooltip>
+    <tooltip xml:lang="fr">« Off » signifie que la sortie de fonction est éteinte - gradation à 0% - sans utiliser de groupe de gradation.</tooltip>
+    <tooltip xml:lang="de">„Off“ bedeutet, dass der Funktionsausgang aus ist - Dimmung auf 0% - ohne Dimm-Gruppe.</tooltip>
   </variable>
 </variables>
