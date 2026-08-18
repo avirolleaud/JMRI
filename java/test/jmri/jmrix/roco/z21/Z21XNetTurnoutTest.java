@@ -213,8 +213,8 @@ public class Z21XNetTurnoutTest extends jmri.jmrix.lenz.XNetTurnoutTest {
     // does not apply here.
     @Test
     @Override
+    @Disabled("Z21XNetTurnout cannot get stuck in OFFSENT, so the OFF watchdog does not apply")
     public void testOffWatchdogResendsWhenReplyNeverArrives() {
-        // no-op for this subclass
     }
 
     @Test

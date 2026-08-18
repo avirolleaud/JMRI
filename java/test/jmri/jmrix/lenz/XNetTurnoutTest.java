@@ -2,6 +2,7 @@ package jmri.jmrix.lenz;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import jmri.util.JUnitAppender;
 import jmri.util.JUnitUtil;
@@ -224,9 +225,8 @@ public class XNetTurnoutTest extends jmri.implementation.AbstractTurnoutTestBase
     // resend the OFF and keep the turnout responsive to later commands.
     @Test
     public void testOffWatchdogResendsWhenReplyNeverArrives() {
-        if (expectedOffMessages() == 0) {
-            return; // this system never sends an OFF message, nothing for the watchdog to guard
-        }
+        // a system that never sends an OFF message has nothing for the watchdog to guard
+        assumeTrue(expectedOffMessages() > 0, "system sends an OFF message");
         assertEquals( Turnout.MONITORING, t.getFeedbackMode(), "Feedback Mode after set");
         ((XNetTurnout) t).setOffWatchdogInterval(100);
 
