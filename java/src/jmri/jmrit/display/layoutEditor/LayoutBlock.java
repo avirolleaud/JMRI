@@ -1013,8 +1013,18 @@ public class LayoutBlock extends AbstractNamedBean implements PropertyChangeList
             }
         }
 
-        // Redraw all Layout Editor panels using this Layout Block
-        redrawLayoutBlockPanels();
+        String property = e.getPropertyName();
+        if (Block.PROPERTY_VALUE.equals(property) || Block.PROPERTY_DIRECTION.equals(property)) {
+            // A panel in use draws neither the value nor the direction of a block: the
+            // icons which display them listen to the block and repaint themselves. Only
+            // a panel being edited draws something from them, the rectangle it puts
+            // around each of those icons, so only those panels are redrawn here.
+            panels.stream().filter(LayoutEditor::isEditable).forEach(LayoutEditor::redrawPanel);
+            firePropertyChange(PROPERTY_REDRAW, null, null);
+        } else {
+            // Redraw all Layout Editor panels using this Layout Block
+            redrawLayoutBlockPanels();
+        }
 
         if (InstanceManager.getDefault(LayoutBlockManager.class).isAdvancedRoutingEnabled()) {
             stateUpdate();

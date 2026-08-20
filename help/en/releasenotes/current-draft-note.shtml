@@ -485,6 +485,9 @@
             <li>An unexpected error while restoring the saved block values no longer leaves
                 Layout Block routing uninitialized, and is now reported in the log instead
                 of passing unnoticed.</li>
+            <li>A change to the value or the direction of a block no longer redraws the whole
+                drawing area of the panels showing it. Neither is drawn by a panel in use, and
+                a panel being edited is still redrawn as before.</li>
             <li></li>
         </ul>
 

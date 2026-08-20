@@ -2,8 +2,15 @@ package jmri.jmrit.display.layoutEditor;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.awt.Rectangle;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JComponent;
+import javax.swing.RepaintManager;
 
 import jmri.Block;
 import jmri.InstanceManager;
@@ -12,10 +19,12 @@ import jmri.SensorManager;
 import jmri.jmrix.internal.InternalSensorManager;
 import jmri.jmrix.internal.InternalSystemConnectionMemo;
 import jmri.util.JUnitUtil;
+import jmri.util.junit.annotations.DisabledIfHeadless;
 
 import org.jdom2.JDOMException;
 
 import org.junit.jupiter.api.*;
+import org.netbeans.jemmy.QueueTool;
 
 /**
  * Test simple functioning of LayoutBlock
@@ -143,6 +152,79 @@ public class LayoutBlockTest {
     }
 
 
+
+    @Test
+    @DisabledIfHeadless
+    public void testValueChangeDoesNotRedrawPanel() {
+        layoutBlock.initializeLayoutBlock();
+        Block block = InstanceManager.getDefault(jmri.BlockManager.class).getByUserName("Test Block");
+        assertNotNull(block);
+
+        LayoutEditor panel = new LayoutEditor();
+        try {
+            panel.setAllEditable(false); // a panel in use, not being edited
+            layoutBlock.addLayoutEditor(panel);
+            List<String> redrawEvents = new ArrayList<>();
+            layoutBlock.addPropertyChangeListener( evt -> {
+                if (LayoutBlock.PROPERTY_REDRAW.equals(evt.getPropertyName())) {
+                    redrawEvents.add(evt.getPropertyName());
+                }
+            });
+
+            new QueueTool().waitEmpty(); // let the repaints of the setup settle first
+            PanelRepaintRecorder recorder = new PanelRepaintRecorder(panel.getTargetPanel());
+            RepaintManager.setCurrentManager(recorder);
+            try {
+                // the value of a block is displayed by icons which repaint themselves
+                block.setValue("1234");
+                new QueueTool().waitEmpty();
+                assertEquals( List.of(), recorder.dirtyRegions,
+                    "a value change does not repaint the panel");
+                assertEquals( 1, redrawEvents.size(),
+                    "a value change still notifies listeners of the redraw property");
+
+                // occupancy changes the colour the track is drawn with, so it still does
+                block.setState(Block.OCCUPIED);
+                new QueueTool().waitEmpty();
+                assertTrue( recorder.dirtyRegions.size() > 0,
+                    "an occupancy change repaints the panel");
+
+                // a panel being edited draws a rectangle around each block contents icon,
+                // sized from the value, so it is still redrawn
+                panel.setAllEditable(true);
+                recorder.dirtyRegions.clear();
+                block.setValue("5678");
+                new QueueTool().waitEmpty();
+                assertTrue( recorder.dirtyRegions.size() > 0,
+                    "a value change repaints a panel being edited");
+            } finally {
+                RepaintManager.setCurrentManager(null);
+            }
+        } finally {
+            JUnitUtil.dispose(panel);
+        }
+    }
+
+    /**
+     * Records the areas a panel is asked to repaint.
+     */
+    private static class PanelRepaintRecorder extends RepaintManager {
+
+        private final JComponent watched;
+        private final List<Rectangle> dirtyRegions = new ArrayList<>();
+
+        PanelRepaintRecorder(JComponent watched) {
+            this.watched = watched;
+        }
+
+        @Override
+        public void addDirtyRegion(JComponent c, int x, int y, int w, int h) {
+            if (c == watched) {
+                dirtyRegions.add(new Rectangle(x, y, w, h));
+            }
+            super.addDirtyRegion(c, x, y, w, h);
+        }
+    }
 
     // from here down is testing infrastructure
     @BeforeEach
