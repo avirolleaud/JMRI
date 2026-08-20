@@ -3,6 +3,9 @@ package jmri.jmrit.display.layoutEditor;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.awt.Rectangle;
 
 import javax.swing.JFrame;
 
@@ -84,6 +87,25 @@ public class BlockContentsIconTest {
             "Label with correct text value");
 
         JUnitUtil.dispose(jf);
+    }
+
+    @Test
+    public void testValueChangeRepaintsBoundedArea() {
+        Rectangle iconBounds = new Rectangle(12, 17, 20, 30);
+        to.setBounds(iconBounds);
+        new QueueTool().waitEmpty(); // let repaints pending from earlier settle first
+        TargetPanelRepaintRecorder recorder =
+            TargetPanelRepaintRecorder.install((LayoutEditor) to.getEditor());
+        try {
+            jmri.InstanceManager.getDefault(BlockManager.class).provideBlock("IB1").setValue("1234");
+            new QueueTool().waitEmpty();
+
+            assertTrue( recorder.hasBoundedRegionCovering(iconBounds),
+                "the icon repaints the area it covers, not the whole drawing area "
+                + recorder.getPanelBounds() + ", repainted " + recorder.getDirtyRegions());
+        } finally {
+            recorder.remove();
+        }
     }
 
     // from here down is testing infrastructure

@@ -1,11 +1,15 @@
 package jmri.jmrit.display.layoutEditor;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
 
 import jmri.util.JUnitUtil;
 import jmri.util.junit.annotations.*;
 
 import org.junit.jupiter.api.*;
+import org.netbeans.jemmy.QueueTool;
 
 /**
  * Test simple functioning of MemoryIcon.
@@ -28,6 +32,26 @@ public class MemoryIconTest extends jmri.jmrit.display.MemoryIconTest {
     @Disabled("When test from superclass is run, Scale is not set")
     @ToDo("rewrite superclass test so it works in this case.")
     public void testGetAndSetScale(){
+    }
+
+    @Test
+    @DisabledIfHeadless
+    public void testValueChangeRepaintsBoundedArea() {
+        Rectangle iconBounds = new Rectangle(12, 17, 20, 30);
+        to.setBounds(iconBounds);
+        new QueueTool().waitEmpty(); // let repaints pending from earlier settle first
+        TargetPanelRepaintRecorder recorder =
+            TargetPanelRepaintRecorder.install((LayoutEditor) editor);
+        try {
+            jmri.InstanceManager.memoryManagerInstance().provideMemory("IM1").setValue("Data Data");
+            new QueueTool().waitEmpty();
+
+            assertTrue( recorder.hasBoundedRegionCovering(iconBounds),
+                "the icon repaints the area it covers, not the whole drawing area "
+                + recorder.getPanelBounds() + ", repainted " + recorder.getDirtyRegions());
+        } finally {
+            recorder.remove();
+        }
     }
 
     @BeforeEach
