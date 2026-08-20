@@ -2,6 +2,8 @@ package jmri.jmrit.display.layoutEditor;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
+import java.awt.Rectangle;
+
 import jmri.Block;
 import jmri.jmrit.roster.RosterEntry;
 import jmri.util.swing.JmriJOptionPane;
@@ -102,11 +104,13 @@ public class BlockContentsIcon extends jmri.jmrit.display.BlockContentsIcon {
         }
     }
 
-    // force a redisplay when content changes
+    // force a redisplay of the area this icon covers when content changes
     @Override
     public void propertyChange(java.beans.PropertyChangeEvent e) {
+        Rectangle dirty = getBounds();
         super.propertyChange(e);
-        panel.redrawPanel();
+        dirty.add(getBounds()); // union with the new bounds, the contents can resize the icon
+        panel.repaintTargetPanel(dirty);
     }
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(BlockContentsIcon.class);

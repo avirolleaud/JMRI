@@ -485,6 +485,9 @@
             <li>An unexpected error while restoring the saved block values no longer leaves
                 Layout Block routing uninitialized, and is now reported in the log instead
                 of passing unnoticed.</li>
+            <li>Block contents icons and memory icons on a Layout Editor panel now repaint
+                only the area they cover when their contents change, instead of repainting
+                the whole drawing area.</li>
             <li></li>
         </ul>
 
