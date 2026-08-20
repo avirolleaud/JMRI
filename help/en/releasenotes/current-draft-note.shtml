@@ -501,6 +501,9 @@
             <li>Block contents icons and memory icons on a Layout Editor panel now repaint
                 only the area they cover when their contents change, instead of repainting
                 the whole drawing area.</li>
+            <li>A change to the value or the direction of a block no longer redraws the whole
+                drawing area of the panels showing it. Neither is drawn by a panel in use, and
+                a panel being edited is still redrawn as before.</li>
             <li></li>
         </ul>
 
